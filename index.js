@@ -1,8 +1,5 @@
 let myLibrary = []
 
-
-
-  
 const addBookToLibrary = (ev)=>{
     ev.preventDefault();
     let book = {
@@ -10,10 +7,11 @@ const addBookToLibrary = (ev)=>{
         author: document.getElementById('author').value,
         status: document.getElementById('status').value
     }
+    myLibrary.push(book)
+    document.forms[0].reset();
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBookToLibrary);
 });
-const theHobbit = new Book("The Hobbit by J.R.R. Tolkein", "295 pages", "yes")
-console.log(theHobbit.info())
+console.log(myLibrary)
