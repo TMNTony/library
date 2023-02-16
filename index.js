@@ -1,20 +1,19 @@
 let myLibrary = []
 
 
-function Book(title, pages, status) {
-    this.title = title
-    this.pages = pages
-    this.status = status
-    this.info = function() {
-        return (
-            [title, pages, status]
-        )
+
+  
+const addBookToLibrary = (ev)=>{
+    ev.preventDefault();
+    let book = {
+        title: document.getElementById('title').value,
+        author: document.getElementById('author').value,
+        status: document.getElementById('status').value
     }
 }
-  
-function addBookToLibrary() {
-    // do stuff here
-}
 
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', addBookToLibrary);
+});
 const theHobbit = new Book("The Hobbit by J.R.R. Tolkein", "295 pages", "yes")
 console.log(theHobbit.info())
