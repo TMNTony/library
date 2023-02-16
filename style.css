@@ -1,0 +1,7 @@
+table {
+    display: grid;
+    width: 1fr
+}
+th {
+    width: 1fr;
+}

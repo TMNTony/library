@@ -1,4 +1,4 @@
-let myLibrary = []
+var myLibrary = []
 
 const addBookToLibrary = (ev)=>{
     ev.preventDefault();
@@ -11,7 +11,26 @@ const addBookToLibrary = (ev)=>{
     document.forms[0].reset();
 }
 
+buildTable(myLibrary)
+
+
+function buildTable(data){
+    var table = document.getElementById('myTable')
+
+    for (var i = 0; i < data.length; i++){
+        var row = `<tr>
+                        <td>${data[i].title}</td>
+                        <td>${data[i].author}</td>
+                        <td>${data[i].status}</td>
+                  </tr>`
+        table.innerHTML += row
+
+
+    }
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', addBookToLibrary);
 });
-console.log(myLibrary)
+
+// {'title':'The Hobbit', 'author':'Tolkein', 'status':'Read'}
