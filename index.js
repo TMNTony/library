@@ -6,7 +6,14 @@ function book(title, author, read){
     this.read = read
 }
 
+book.prototype.toggleRead = function() {
+    this.read = !this.read;
+}
 
+function toggleRead(index) {
+    myLibrary[index].toggleRead()
+    buildTable()
+}
 
 function addBookToLibrary(){
     let title = document.querySelector('#title').value;
@@ -25,8 +32,9 @@ function buildTable(){
         let row = `<tr>
                         <td>${myLibrary[i].title}</td>
                         <td>${myLibrary[i].author}</td>
-                        <td>${myLibrary[i].read}</td>
+                        <td>${myLibrary[i].read ? "Read" : "Not Read"}</td>
                         <td><button onclick="removeBook(${i})">Remove</button></td> 
+                        <td><button onclick="toggleRead(${i})">Toggle Read</button></td> 
                   </tr>`
         table.innerHTML += row
     }
