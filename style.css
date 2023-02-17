@@ -1,12 +1,41 @@
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: antiquewhite;
 }
-
 h1 {
     text-align: center;
+}
+
+.myForm {
+    border: 1px solid black;
+    border-radius: 10px;
+    display: grid;
+    padding: 20px;
+    width: 33%;
+    text-align: center;
+    background-color: white;
+}
+
+/* tbody{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+} */
+
+.header {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
+    grid-column: 1/-1;
+    width: 600px;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+
+.myTable tr{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr;
 }

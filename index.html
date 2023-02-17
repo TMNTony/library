@@ -10,7 +10,7 @@
 </head>
 <body>
    <h1>Library</h1> 
-   <form>
+   <form class="myForm">
     <label for="title">Title</label>
     <input type="text" id="title" required>
     <label for="author">Author</label>
@@ -19,17 +19,11 @@
     <input type="checkbox" id="read">
     <button id="btn">Submit</button>
    </form>
-   <table>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Read</th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tbody id="myTable">
-
-    </tbody>
-   </table>
+   <div class="tableContainer">
+      <table>
+        <tbody id="myTable">
+        </tbody>
+      </table>
+   </div>
 </body>
 </html>
