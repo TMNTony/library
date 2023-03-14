@@ -1,9 +1,11 @@
 let myLibrary = []
 
-function book(title, author, read){
+class book {
+    constructor(title, author, read) {
     this.title = title
     this.author = author
     this.read = read
+    }
 }
 
 book.prototype.toggleRead = function() {
@@ -19,6 +21,12 @@ function addBookToLibrary(){
     let title = document.querySelector('#title').value;
     let author = document.querySelector('#author').value;
     let read = document.querySelector('#read').checked;
+
+      // Validate required fields
+      if (title === "" || author === "") {
+        alert("Please fill in all required fields.");
+        return;
+    }
     let newBook = new book(title, author, read)
     myLibrary.push(newBook)
     buildTable();
@@ -45,7 +53,7 @@ function removeBook(index){
     buildTable();
 }
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', function(e){
+    document.getElementById('btn').addEventListener('click', (e) => {
         e.preventDefault();
         addBookToLibrary();
     });
